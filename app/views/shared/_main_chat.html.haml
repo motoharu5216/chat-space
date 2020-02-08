@@ -1,0 +1,26 @@
+.main
+  .main__header
+    .header-box
+      .header-box__group-name test
+      .header-box__group-list Member:masa
+    = link_to "edit", "#", class: "edit-btn" 
+  .main__message-list
+    .message-box
+      .message-top
+        %p.message-top__name masa
+        %p.message-top__time 2019/11/20(Wed) 17:43:01
+      .message-comment おはよう！
+    .message-box
+      .message-top
+        %p.message-top__name masa
+        %p.message-top__time 2019/11/20(Wed) 17:43:01
+      .message-comment おはよう！
+
+  .form
+    %form.text-box
+      .text-form
+        %input{type: "text", placeholder: "type a message", class: "text-form__input"}
+        %label{class: "text-form__icon"}
+          = icon('fas','image')
+          %input{type: "file", class: "text-form__icon__file"}
+      %input{type: "submit", name: "commit", value: "Send", class: "send-button"}
