@@ -1,7 +1,8 @@
 .side
   .side-header
     .header-box
-      %p.header-box__user-name name
+      %p.header-box__user-name
+        = current_user.name
       %ul.header-box__box-item
         = link_to "#", class: "header-box__box-item__group-btn" do
           %i.fa.fa-edit
