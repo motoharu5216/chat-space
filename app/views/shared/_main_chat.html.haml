@@ -1,8 +1,13 @@
 .main
   .main__header
     .header-box
-      .header-box__group-name test
-      .header-box__group-list Member:masa
+      .header-box__group-name
+        = @group.name
+      .header-box__group-list
+        Member：
+        %ul.user-name
+          - @group.users.each do |user|
+            %li= user.name
     = link_to "edit", "#", class: "edit-btn" 
   .main__message-list
     .messages
