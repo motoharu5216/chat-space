@@ -13,7 +13,7 @@
     - current_user.groups.each do |group|
       .side-group-list__box
         = link_to group_messages_path(group) do
-          %p.side-group-list__box__name
+          .side-group-list__box__name
             = group.name
-          %p.side-group-list__box__comment
-            メッセージはまだありません。
+          .side-group-list__box__comment
+            = group.show_last_message
