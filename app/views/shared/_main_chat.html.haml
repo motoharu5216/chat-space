@@ -5,22 +5,14 @@
       .header-box__group-list Member:masa
     = link_to "edit", "#", class: "edit-btn" 
   .main__message-list
-    .message-box
-      .message-top
-        %p.message-top__name masa
-        %p.message-top__time 2019/11/20(Wed) 17:43:01
-      .message-comment おはよう！
-    .message-box
-      .message-top
-        %p.message-top__name masa
-        %p.message-top__time 2019/11/20(Wed) 17:43:01
-      .message-comment おはよう！
+    .messages
+      = render @messages
 
   .form
-    %form.text-box
+    = form_for [@group, @message] do |f|
+      = f.text_field :content, class: "text-form__input", placeholder: "type a message"
       .text-form
-        %input{type: "text", placeholder: "type a message", class: "text-form__input"}
-        %label{class: "text-form__icon"}
+        = f.label :image, class: "text-form__icon" do
           = icon('fas','image')
-          %input{type: "file", class: "text-form__icon__file"}
-      %input{type: "submit", name: "commit", value: "Send", class: "send-button"}
+          = f.file_field :image, class: "text-form__icon__file"
+      = f.submit "Send", class: "send-button"
