@@ -8,10 +8,11 @@
           %i.fa.fa-edit
         = link_to edit_user_path(current_user), class: "header-box__box-item__config-btn" do
           %i.fa.fa-cog
+
   .side-group-list
     - current_user.groups.each do |group|
       .side-group-list__box
-        =link_to '#' do
+        = link_to group_messages_path(group) do
           %p.side-group-list__box__name
             = group.name
           %p.side-group-list__box__comment
