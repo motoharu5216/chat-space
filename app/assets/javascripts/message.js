@@ -60,6 +60,9 @@ $(function(){
     })
     .fail(function() {
       alert("メッセージ送信に失敗しました");
+    })
+    .always(function() {
+      $(".send-button").prop("disabled", false);
     });
   });
 
