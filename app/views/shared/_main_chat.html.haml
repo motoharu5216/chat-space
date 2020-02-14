@@ -9,9 +9,8 @@
           - @group.users.each do |user|
             %li= user.name
     = link_to "edit", edit_group_path(@group.id), class: "edit-btn" 
-  .main__message-list
-    .messages
-      = render @messages
+  .messages
+    = render @messages
 
   .form
     = form_for [@group, @message], html:{class: 'text-box'} do |f|
